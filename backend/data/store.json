@@ -1,0 +1,142 @@
+{
+  "users": [
+    {
+      "id": "USR-1001",
+      "name": "Asha Kumar",
+      "email": "citizen@civicmind.ai",
+      "passwordHash": "$2a$10$bPHHJ0lOucEwLE9mff5hbeInVATMB4ij3hLzWdjiv90TdJQnhf0Me",
+      "role": "citizen"
+    },
+    {
+      "id": "USR-1002",
+      "name": "Ravi Mehta",
+      "email": "authority@civicmind.ai",
+      "passwordHash": "$2a$10$KBECg752mAus9azW2ZXN0eTJsSboQA3154/FW7sMgokyO9tzJ/dHS",
+      "role": "authority"
+    },
+    {
+      "id": "USR-1785923038643",
+      "name": "Test Citizen",
+      "email": "testcitizen@example.com",
+      "passwordHash": "$2a$10$RZnhP9s2P943KUT3ppVkuudXjTK2bGAMWTTscOxloWKBYFERJbNAe",
+      "role": "citizen"
+    }
+  ],
+  "complaints": [
+    {
+      "id": "CMP-1785938195940",
+      "title": "Road problem",
+      "description": "Road is damaged too much ",
+      "category": "Road Damage",
+      "severity": "High",
+      "status": "Pending",
+      "location": "17.321548, 78.535124",
+      "department": "Public Works",
+      "lat": 17.321547769516727,
+      "lng": 78.53512444981412,
+      "imageUrl": "http://localhost:4000/uploads/1785938181270-road.webp.jpeg",
+      "createdAt": "2026-08-05T13:56:35.940Z",
+      "supportCount": 3,
+      "communitySupport": "3 citizens supporting",
+      "ai": {
+        "summary": "AI-assisted review determined road damage risk near 17.321548, 78.535124 with high priority.",
+        "department": "Public Works",
+        "severity": "High",
+        "category": "Road Damage",
+        "confidence": 93,
+        "explainability": "Why AI made this decision: the complaint title, severity, location context, and nearby infrastructure patterns suggest road damage risk with elevated urgency in 17.321548, 78.535124.",
+        "impactScore": 87,
+        "impactFactors": {
+          "roadSafetyRisk": 79,
+          "trafficDensity": 83,
+          "nearbySchools": 75,
+          "nearbyHospitals": 81,
+          "nearbyBusStops": 77,
+          "populationAffected": 86,
+          "weatherConditions": 80
+        },
+        "recommendation": {
+          "responsibleDepartment": "Public Works",
+          "workersRequired": 5,
+          "estimatedCost": "₹42,000",
+          "estimatedRepairTime": "4 days",
+          "priority": "High",
+          "materialsNeeded": "Bitumen, compactors, safety barriers",
+          "explanation": "Road Damage near 17.321548, 78.535124 requires coordinated Public Works intervention for rapid resolution."
+        },
+        "riskPrediction": [
+          {
+            "label": "Flood Risk",
+            "percentage": 18,
+            "confidence": 77,
+            "explanation": "Water-related interruptions in the monitored region indicate a growing drainage risk pattern.",
+            "recommendedAction": "Inspect drainage lines and deploy flood response team."
+          },
+          {
+            "label": "Garbage Overflow Risk",
+            "percentage": 14,
+            "confidence": 81,
+            "explanation": "Density of sanitation incidents suggests a rising overflow pattern near high-traffic zones.",
+            "recommendedAction": "Increase collection sweep frequency at hotspots."
+          },
+          {
+            "label": "Road Damage Expansion",
+            "percentage": 20,
+            "confidence": 84,
+            "explanation": "Recurring transport incidents point to worsening pavement degradation trends.",
+            "recommendedAction": "Prioritize lane repair and traffic block mitigation."
+          },
+          {
+            "label": "Streetlight Failure Zone",
+            "percentage": 12,
+            "confidence": 74,
+            "explanation": "Lighting outage clusters are emerging in under-served corridors.",
+            "recommendedAction": "Dispatch maintenance to the top 3 safety hotspots."
+          }
+        ]
+      }
+    }
+  ],
+  "notifications": [
+    {
+      "id": "NT-1785923146599",
+      "message": "New complaint CMP-1785923146599 received and routed to Public Works.",
+      "type": "new",
+      "read": true,
+      "complaintId": "CMP-1785923146599",
+      "createdAt": "2026-08-05T09:45:46.599Z"
+    },
+    {
+      "id": "NT-1785689625750",
+      "message": "New complaint CMP-1785689625750 received and routed to Electrical.",
+      "type": "new",
+      "read": true,
+      "complaintId": "CMP-1785689625750",
+      "createdAt": "2026-08-02T16:53:45.750Z"
+    },
+    {
+      "id": "NT-1785687955773",
+      "message": "Complaint CMP-1785687955759 updated to Assigned.",
+      "type": "update",
+      "read": false,
+      "complaintId": "CMP-1785687955759",
+      "createdAt": "2026-08-02T16:25:55.773Z"
+    },
+    {
+      "id": "NT-1001",
+      "message": "Complaint CMP-1001 has been moved to Public Works.",
+      "type": "assignment",
+      "read": false,
+      "complaintId": "CMP-1001",
+      "createdAt": "2026-08-02T16:22:40.054Z"
+    },
+    {
+      "id": "NT-1002",
+      "message": "Priority review requested for CMP-1003.",
+      "type": "alert",
+      "read": false,
+      "complaintId": "CMP-1003",
+      "createdAt": "2026-08-02T15:52:40.054Z"
+    }
+  ]
+}

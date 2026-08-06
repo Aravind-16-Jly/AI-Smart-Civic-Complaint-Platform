@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: Inter, 'Poppins', system-ui, sans-serif;
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.27), transparent 28%),
+    linear-gradient(135deg, #020617, #07101d 42%, #030712 100%);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: transparent;
+  overflow-x: hidden;
+  font-family: Inter, 'Poppins', 'Plus Jakarta Sans', 'Manrope', sans-serif;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: transparent;
+  z-index: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(96, 165, 250, 0.35);
+  color: white;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  transition:
+    transform 260ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 260ms ease,
+    background-color 260ms ease,
+    opacity 260ms ease,
+    filter 260ms ease;
+  will-change: transform, box-shadow;
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+button:hover,
+a:hover,
+input:hover,
+select:hover,
+textarea:hover {
+  transform: translateY(-1px);
+}
+
+button:active,
+a:active {
+  transform: translateY(0);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid rgba(96, 165, 250, 0.8);
+  outline-offset: 2px;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(11, 18, 38, 0.72), rgba(7, 13, 25, 0.58));
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  box-shadow: 0 16px 50px rgba(2, 6, 23, 0.45), 0 0 0 1px rgba(96, 165, 250, 0.08);
+}
+
+.glass:hover {
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 20px 48px rgba(13, 37, 79, 0.36), 0 0 0 1px rgba(96, 165, 250, 0.16);
+  transform: translateY(-2px) scale(1.003);
+}
+
+.premium-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(180deg, rgba(17, 24, 39, 0.84), rgba(8, 14, 29, 0.74));
+  box-shadow: 0 20px 70px rgba(2, 6, 23, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 320ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 320ms ease,
+    filter 320ms ease;
+}
+
+.premium-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.12), transparent 38%, rgba(45, 212, 191, 0.12));
+  opacity: 0;
+  transition: opacity 420ms ease;
+}
+
+.premium-card:hover::before {
+  opacity: 0.9;
+}
+
+.premium-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.premium-card:hover {
+  transform: translateY(-3px) scale(1.005);
+  border-color: rgba(96, 165, 250, 0.28);
+  box-shadow: 0 24px 64px rgba(2, 6, 23, 0.46), 0 0 0 1px rgba(96, 165, 250, 0.16);
+  filter: saturate(1.05);
+}
+
+.hero-scene {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(5, 11, 24, 0.72), rgba(2, 6, 23, 0.96)),
+    radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 26%),
+    radial-gradient(circle at top right, rgba(45, 212, 191, 0.12), transparent 28%),
+    linear-gradient(135deg, #020617, #07111f 55%, #030712);
+}
+
+.hero-scene::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(34, 211, 238, 0.16), transparent 42%),
+    linear-gradient(120deg, rgba(3, 8, 20, 0.68), rgba(7, 17, 29, 0.28));
+  pointer-events: none;
+}
+
+.hero-scene::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent 0%, rgba(96, 165, 250, 0.35) 50%, transparent 100%),
+    radial-gradient(circle at 20% 30%, rgba(96, 165, 250, 0.28), transparent 14%),
+    radial-gradient(circle at 72% 34%, rgba(34, 211, 238, 0.22), transparent 16%),
+    radial-gradient(circle at 56% 72%, rgba(59, 130, 246, 0.2), transparent 18%);
+  filter: blur(8px);
+  animation: slowPulse 18s ease-in-out infinite;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.hero-network {
+  background:
+    radial-gradient(circle at 50% 40%, rgba(34, 211, 238, 0.18), transparent 25%),
+    radial-gradient(circle at 25% 75%, rgba(52, 211, 153, 0.12), transparent 32%),
+    linear-gradient(135deg, rgba(34, 211, 238, 0.06), transparent 40%, rgba(251, 191, 36, 0.08));
+  filter: blur(8px);
+  opacity: 0.9;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(24px);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(125, 211, 252, 0.9);
+  box-shadow: 0 0 18px rgba(59, 130, 246, 0.8);
+  opacity: 0.65;
+  animation: drift 14s linear infinite;
+}
+
+.button-primary,
+.button-secondary,
+.button-ghost {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.button-primary::after,
+.button-secondary::after,
+.button-ghost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), transparent 65%);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 420ms ease, transform 680ms ease;
+}
+
+.button-primary:hover::after,
+.button-secondary:hover::after,
+.button-ghost:hover::after {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.95), rgba(99, 102, 241, 0.92));
+  box-shadow: 0 12px 34px rgba(59, 130, 246, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.button-secondary {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.92));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.35);
+}
+
+.button-ghost {
+  background: rgba(15, 23, 42, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-pill,
+.nav-pill-active {
+  position: relative;
+}
+
+.nav-pill::after,
+.nav-pill-active::after {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: -0.25rem;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(96, 165, 250, 0.95), rgba(45, 212, 191, 0.95));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 300ms ease;
+}
+
+.nav-pill:hover::after,
+.nav-pill-active::after {
+  transform: scaleX(1);
+}
+
+.nav-pill-active {
+  color: white;
+}
+
+.floating-card {
+  transform: none;
+}
+
+.skeleton-bar {
+  position: relative;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.skeleton-bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(14px, -16px, 0) scale(1.2);
+  }
+  100% {
+    transform: translate3d(-18px, -38px, 0) scale(0.94);
+  }
+}
+
+@keyframes slowPulse {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.04;
+  }
+  50% {
+    transform: translateY(-4px) scale(1.04);
+    opacity: 0.08;
+  }
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 rgba(96, 165, 250, 0.13);
+  }
+  50% {
+    box-shadow: 0 0 26px rgba(96, 165, 250, 0.25);
+  }
+}
+
+.animate-glow {
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+.ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple:focus-visible,
+.ripple:active {
+  animation: pulseGlow 1.6s ease-in-out infinite;
+}
