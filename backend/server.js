@@ -536,6 +536,12 @@ async function saveImageToDisk(imageData, fileName) {
 
 async function handleAuth(mode, req, res) {
   const { email, password, name, role } = req.body || {};
+  try {
+    // Minimal logging for debugging: avoid printing raw passwords
+    console.log(`[auth:${mode}] incoming payload:`, { email: String(email || '').toLowerCase(), name: String(name || '').slice(0, 64), role: role || 'unspecified', passwordLength: password ? String(password).length : 0 });
+  } catch (e) {
+    // ignore logging errors
+  }
   if (!email || !password) {
     return res.status(400).json({ success: false, message: 'Email and password are required.' });
   }
@@ -754,6 +760,14 @@ app.patch('/api/notifications/:id/read', async (req, res) => {
   notification.read = true;
   await persistStore();
   return res.json({ success: true, data: notification, unread: store.notifications.filter((item) => !item.read).length });
+});
+
+app.use((error, req, res, next) => {
+  console.error('Unhandled server error:', error);
+  if (res.headersSent) {
+    return next(error);
+  }
+  return res.status(error.status || 500).json({ success: false, message: error.message || 'Internal server error.' });
 });
 
 export async function startServer(port = PORT) {

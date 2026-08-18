@@ -24,27 +24,27 @@
   ],
   "complaints": [
     {
-      "id": "CMP-1785938195940",
-      "title": "Road problem",
-      "description": "Road is damaged too much ",
+      "id": "CMP-1786096743602",
+      "title": "Road damage issue",
+      "description": "damage is too much\n",
       "category": "Road Damage",
       "severity": "High",
-      "status": "Pending",
-      "location": "17.321548, 78.535124",
+      "status": "Resolved",
+      "location": "meerpet",
       "department": "Public Works",
-      "lat": 17.321547769516727,
-      "lng": 78.53512444981412,
-      "imageUrl": "http://localhost:4000/uploads/1785938181270-road.webp.jpeg",
-      "createdAt": "2026-08-05T13:56:35.940Z",
-      "supportCount": 3,
-      "communitySupport": "3 citizens supporting",
+      "lat": 12.9716,
+      "lng": 77.5946,
+      "imageUrl": "http://localhost:4000/uploads/1786096727586-road.webp.jpeg",
+      "createdAt": "2026-08-07T09:59:03.602Z",
+      "supportCount": 1,
+      "communitySupport": "1 citizen supporting",
       "ai": {
-        "summary": "AI-assisted review determined road damage risk near 17.321548, 78.535124 with high priority.",
+        "summary": "AI-assisted review determined road damage risk near meerpet with high priority.",
         "department": "Public Works",
         "severity": "High",
         "category": "Road Damage",
         "confidence": 93,
-        "explainability": "Why AI made this decision: the complaint title, severity, location context, and nearby infrastructure patterns suggest road damage risk with elevated urgency in 17.321548, 78.535124.",
+        "explainability": "Why AI made this decision: the complaint title, severity, location context, and nearby infrastructure patterns suggest road damage risk with elevated urgency in meerpet.",
         "impactScore": 87,
         "impactFactors": {
           "roadSafetyRisk": 79,
@@ -62,7 +62,7 @@
           "estimatedRepairTime": "4 days",
           "priority": "High",
           "materialsNeeded": "Bitumen, compactors, safety barriers",
-          "explanation": "Road Damage near 17.321548, 78.535124 requires coordinated Public Works intervention for rapid resolution."
+          "explanation": "Road Damage near meerpet requires coordinated Public Works intervention for rapid resolution."
         },
         "riskPrediction": [
           {
@@ -99,28 +99,20 @@
   ],
   "notifications": [
     {
-      "id": "NT-1785923146599",
-      "message": "New complaint CMP-1785923146599 received and routed to Public Works.",
-      "type": "new",
-      "read": true,
-      "complaintId": "CMP-1785923146599",
-      "createdAt": "2026-08-05T09:45:46.599Z"
-    },
-    {
-      "id": "NT-1785689625750",
-      "message": "New complaint CMP-1785689625750 received and routed to Electrical.",
-      "type": "new",
-      "read": true,
-      "complaintId": "CMP-1785689625750",
-      "createdAt": "2026-08-02T16:53:45.750Z"
-    },
-    {
-      "id": "NT-1785687955773",
-      "message": "Complaint CMP-1785687955759 updated to Assigned.",
+      "id": "NT-1786096791075",
+      "message": "Complaint CMP-1786096743602 updated to Resolved.",
       "type": "update",
       "read": false,
-      "complaintId": "CMP-1785687955759",
-      "createdAt": "2026-08-02T16:25:55.773Z"
+      "complaintId": "CMP-1786096743602",
+      "createdAt": "2026-08-07T09:59:51.075Z"
+    },
+    {
+      "id": "NT-1786096743602",
+      "message": "New complaint CMP-1786096743602 received and routed to Public Works.",
+      "type": "new",
+      "read": false,
+      "complaintId": "CMP-1786096743602",
+      "createdAt": "2026-08-07T09:59:03.602Z"
     },
     {
       "id": "NT-1001",
